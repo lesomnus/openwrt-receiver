@@ -233,3 +233,13 @@ func TestCollect(t *testing.T) {
 		t.Errorf("want one client, got %d", info)
 	}
 }
+
+func TestCarrierChangesPath(t *testing.T) {
+	// No root path is the system's own /sys, not one relative to where the Collector runs.
+	if got := (&reader{}).carrierChangesPath("lan1"); got != "/sys/class/net/lan1/carrier_changes" {
+		t.Errorf("got %s", got)
+	}
+	if got := (&reader{sysRoot: "/hostfs"}).carrierChangesPath("lan1"); got != "/hostfs/sys/class/net/lan1/carrier_changes" {
+		t.Errorf("got %s", got)
+	}
+}

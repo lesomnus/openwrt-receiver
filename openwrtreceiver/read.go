@@ -200,7 +200,7 @@ func (r *reader) read(ctx context.Context) (*snapshot, error) {
 		if !d.Present {
 			continue
 		}
-		b, err := os.ReadFile(filepath.Join(r.sysRoot, "sys", "class", "net", name, "carrier_changes"))
+		b, err := os.ReadFile(r.carrierChangesPath(name))
 		if err != nil {
 			continue // e.g. gone since netifd listed it
 		}
@@ -239,6 +239,14 @@ func (r *reader) read(ctx context.Context) (*snapshot, error) {
 	}
 
 	return s, errors.Join(errs...)
+}
+
+func (r *reader) carrierChangesPath(device string) string {
+	root := r.sysRoot
+	if root == "" {
+		root = "/"
+	}
+	return filepath.Join(root, "sys", "class", "net", device, "carrier_changes")
 }
 
 // speed reads a link speed as netifd prints it, e.g. 1000F: Mbit/s and duplex.
