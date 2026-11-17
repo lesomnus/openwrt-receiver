@@ -1,0 +1,85 @@
+{
+	"freq": 5260,
+	"clients": {
+		"02:00:00:00:00:07": {
+			"auth": true,
+			"assoc": true,
+			"authorized": true,
+			"preauth": false,
+			"wds": false,
+			"wmm": true,
+			"ht": true,
+			"vht": true,
+			"he": false,
+			"wps": false,
+			"mfp": false,
+			"mbo": false,
+			"rrm": [
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"extended_capabilities": [
+				4,
+				0,
+				10,
+				2,
+				1,
+				64,
+				64,
+				64,
+				0,
+				1,
+				32
+			],
+			"aid": 1,
+			"bytes": {
+				"rx": 40296873,
+				"tx": 44692005
+			},
+			"airtime": {
+				"rx": 62976698,
+				"tx": 20768948
+			},
+			"packets": {
+				"rx": 35950,
+				"tx": 33993
+			},
+			"rate": {
+				"rx": 58500000,
+				"tx": 52660000
+			},
+			"signal": -67,
+			"capabilities": {
+				"vht": {
+					"su_beamformee": true,
+					"mu_beamformee": true,
+					"mcs_map": {
+						"rx": {
+							"1ss": 9,
+							"2ss": 9,
+							"3ss": -1,
+							"4ss": -1,
+							"5ss": -1,
+							"6ss": -1,
+							"7ss": -1,
+							"8ss": -1
+						},
+						"tx": {
+							"1ss": 9,
+							"2ss": 9,
+							"3ss": -1,
+							"4ss": -1,
+							"5ss": -1,
+							"6ss": -1,
+							"7ss": -1,
+							"8ss": -1
+						}
+					}
+				}
+			}
+		}
+	}
+}
